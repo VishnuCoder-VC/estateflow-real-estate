@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="EstateFlow is a modern real estate website that helps families discover premium homes, trusted agents, and exceptional living experiences."
+    />
+    <meta name="keywords" content="real estate, luxury homes, premium properties, estateflow" />
+    <meta name="author" content="EstateFlow" />
+    <title>EstateFlow | Modern Real Estate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script>
+      try {
+        const storedTheme = localStorage.getItem('estateflow-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = storedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (error) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-loader" id="pageLoader">
+      <div class="loader"></div>
+    </div>
+
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Main navigation">
+        <a class="logo" href="#home">
+          <span class="logo-mark">E</span>
+          <span>EstateFlow</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link active" href="#home">Home</a>
+          <a class="nav-link" href="#properties">Properties</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#testimonials">Testimonials</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a class="btn btn-small btn-primary" href="#contact">Login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <!-- Hero -->
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-content reveal">
+            <span class="badge">Trusted by 15,000+ Families</span>
+            <h1>Find Your Dream Home Today</h1>
+            <p>
+              Discover luxury residences, intelligent neighborhoods, and premium spaces designed around your lifestyle.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#properties">Explore Properties</a>
+              <a class="btn btn-outline" href="#contact">Contact Agent</a>
+            </div>
+            <div class="hero-stats">
+              <article>
+                <strong data-count="1200">0</strong>
+                <span>Happy Clients</span>
+              </article>
+              <article>
+                <strong data-count="350">0</strong>
+                <span>Properties Sold</span>
+              </article>
+              <article>
+                <strong data-count="24">0</strong>
+                <span>Cities</span>
+              </article>
+              <article>
+                <strong data-count="12">0</strong>
+                <span>Years of Experience</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <img src="images/hero.svg" alt="Luxury modern home exterior" />
+            <div class="floating-card">
+              <p class="card-label">Featured Listing</p>
+              <h3>Oceanview Villa</h3>
+              <p>4 Beds • 3 Baths • 5,800 sq ft</p>
+              <div class="card-meta">
+                <span>$1.2M</span>
+                <a href="#properties">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search -->
+      <section class="search-section container reveal">
+        <form class="glass-search">
+          <div class="field">
+            <label for="location">Location</label>
+            <input id="location" type="text" placeholder="Miami Beach" />
+          </div>
+          <div class="field">
+            <label for="type">Property Type</label>
+            <select id="type">
+              <option>House</option>
+              <option>Villa</option>
+              <option>Apartment</option>
+              <option>Office</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Budget</label>
+            <input id="budget" type="text" placeholder="$800k - $1.5M" />
+          </div>
+          <button class="btn btn-primary search-btn" type="submit">Search</button>
+        </form>
+      </section>
+
+      <!-- Trusted companies -->
+      <section class="companies section container reveal" id="services">
+        <p class="section-label">Trusted by leading brands</p>
+        <div class="company-logos">
+          <span>Google</span>
+          <span>Microsoft</span>
+          <span>Amazon</span>
+          <span>Airbnb</span>
+          <span>Tesla</span>
+        </div>
+      </section>
+
+      <!-- Featured properties -->
+      <section class="featured section container reveal" id="properties">
+        <div class="section-heading">
+          <p class="section-label">Featured Properties</p>
+          <h2>Handpicked Homes for Elevated Living</h2>
+          <p>Explore premium properties curated for comfort, location, and long-term value.</p>
+        </div>
+        <div class="property-grid">
+          <article class="property-card">
+            <img src="images/property-1.svg" alt="Modern villa property" />
+            <div class="property-body">
+              <div class="card-top">
+                <span class="price">$980k</span>
+                <button class="icon-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h3>Skyline Villa</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Beverly Hills, CA</p>
+              <ul class="property-meta">
+                <li><i class="fa-solid fa-bed"></i> 4 Beds</li>
+                <li><i class="fa-solid fa-bath"></i> 3 Baths</li>
+                <li><i class="fa-solid fa-ruler-combined"></i> 4,800 sqft</li>
+              </ul>
+              <a class="btn btn-outline full-width" href="#contact">View Details</a>
+            </div>
+          </article>
+
+          <article class="property-card">
+            <img src="images/property-2.svg" alt="Luxury penthouse property" />
+            <div class="property-body">
+              <div class="card-top">
+                <span class="price">$1.3M</span>
+                <button class="icon-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h3>Harbor Penthouse</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Miami Beach, FL</p>
+              <ul class="property-meta">
+                <li><i class="fa-solid fa-bed"></i> 3 Beds</li>
+                <li><i class="fa-solid fa-bath"></i> 2 Baths</li>
+                <li><i class="fa-solid fa-ruler-combined"></i> 3,200 sqft</li>
+              </ul>
+              <a class="btn btn-outline full-width" href="#contact">View Details</a>
+            </div>
+          </article>
+
+          <article class="property-card">
+            <img src="images/property-3.svg" alt="Contemporary home property" />
+            <div class="property-body">
+              <div class="card-top">
+                <span class="price">$860k</span>
+                <button class="icon-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h3>Alpine Residence</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Aspen, CO</p>
+              <ul class="property-meta">
+                <li><i class="fa-solid fa-bed"></i> 5 Beds</li>
+                <li><i class="fa-solid fa-bath"></i> 4 Baths</li>
+                <li><i class="fa-solid fa-ruler-combined"></i> 5,100 sqft</li>
+              </ul>
+              <a class="btn btn-outline full-width" href="#contact">View Details</a>
+            </div>
+          </article>
+
+          <article class="property-card">
+            <img src="images/property-4.svg" alt="Luxury townhouse property" />
+            <div class="property-body">
+              <div class="card-top">
+                <span class="price">$740k</span>
+                <button class="icon-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h3>Royal Townhouse</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Austin, TX</p>
+              <ul class="property-meta">
+                <li><i class="fa-solid fa-bed"></i> 3 Beds</li>
+                <li><i class="fa-solid fa-bath"></i> 2 Baths</li>
+                <li><i class="fa-solid fa-ruler-combined"></i> 2,900 sqft</li>
+              </ul>
+              <a class="btn btn-outline full-width" href="#contact">View Details</a>
+            </div>
+          </article>
+
+          <article class="property-card">
+            <img src="images/property-5.svg" alt="Modern estate property" />
+            <div class="property-body">
+              <div class="card-top">
+                <span class="price">$1.6M</span>
+                <button class="icon-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h3>Garden Estate</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Malibu, CA</p>
+              <ul class="property-meta">
+                <li><i class="fa-solid fa-bed"></i> 6 Beds</li>
+                <li><i class="fa-solid fa-bath"></i> 5 Baths</li>
+                <li><i class="fa-solid fa-ruler-combined"></i> 7,200 sqft</li>
+              </ul>
+              <a class="btn btn-outline full-width" href="#contact">View Details</a>
+            </div>
+          </article>
+
+          <article class="property-card">
+            <img src="images/property-6.svg" alt="Elegant loft property" />
+            <div class="property-body">
+              <div class="card-top">
+                <span class="price">$640k</span>
+                <button class="icon-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <h3>Metro Loft</h3>
+              <p><i class="fa-solid fa-location-dot"></i> Seattle, WA</p>
+              <ul class="property-meta">
+                <li><i class="fa-solid fa-bed"></i> 2 Beds</li>
+                <li><i class="fa-solid fa-bath"></i> 2 Baths</li>
+                <li><i class="fa-solid fa-ruler-combined"></i> 2,200 sqft</li>
+              </ul>
+              <a class="btn btn-outline full-width" href="#contact">View Details</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Why choose us -->
+      <section class="why-us section container reveal" id="about">
+        <div class="section-heading">
+          <p class="section-label">Why Choose Us</p>
+          <h2>Everything you need to buy or sell with confidence</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <div class="icon-wrap"><i class="fa-solid fa-shield-check"></i></div>
+            <h3>Verified Listings</h3>
+            <p>Every property is reviewed for authenticity and quality before it reaches the market.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="icon-wrap"><i class="fa-solid fa-tags"></i></div>
+            <h3>Best Price Guarantee</h3>
+            <p>We help you negotiate the best possible deal with market-driven insight.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="icon-wrap"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Trusted Agents</h3>
+            <p>Work with seasoned professionals who know the neighborhoods and the value.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="icon-wrap"><i class="fa-solid fa-headset"></i></div>
+            <h3>24/7 Support</h3>
+            <p>Our concierge team remains available whenever you need guidance or updates.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="stats section container reveal">
+        <div class="stats-card">
+          <div>
+            <strong data-count="98">0</strong>
+            <span>Client Satisfaction</span>
+          </div>
+          <div>
+            <strong data-count="4500">0</strong>
+            <span>Listings Managed</span>
+          </div>
+          <div>
+            <strong data-count="36">0</strong>
+            <span>Luxury Projects</span>
+          </div>
+          <div>
+            <strong data-count="20">0</strong>
+            <span>Global Partners</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Property categories -->
+      <section class="categories section container reveal">
+        <div class="section-heading">
+          <p class="section-label">Property Categories</p>
+          <h2>Find the perfect property fit</h2>
+        </div>
+        <div class="categories-grid">
+          <article class="category-card"><i class="fa-solid fa-building"></i><h3>Apartment</h3></article>
+          <article class="category-card"><i class="fa-solid fa-house"></i><h3>Villa</h3></article>
+          <article class="category-card"><i class="fa-solid fa-city"></i><h3>Office</h3></article>
+          <article class="category-card"><i class="fa-solid fa-store"></i><h3>Commercial</h3></article>
+          <article class="category-card"><i class="fa-solid fa-couch"></i><h3>Studio</h3></article>
+          <article class="category-card"><i class="fa-solid fa-map-location-dot"></i><h3>Plot</h3></article>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials section container reveal" id="testimonials">
+        <div class="section-heading">
+          <p class="section-label">Testimonials</p>
+          <h2>Stories from happy homeowners</h2>
+        </div>
+        <div class="testimonial-slider">
+          <article class="testimonial-card active">
+            <img src="images/avatar-1.svg" alt="Customer portrait" />
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>“EstateFlow made buying our dream home effortless. The experience felt personal, premium, and stress-free.”</p>
+            <h3>Sarah Chen</h3>
+            <span>Marketing Director</span>
+          </article>
+          <article class="testimonial-card">
+            <img src="images/avatar-2.svg" alt="Customer portrait" />
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>“The team guided us through every step, and we found a gorgeous villa in record time.”</p>
+            <h3>Daniel Brooks</h3>
+            <span>Product Designer</span>
+          </article>
+          <article class="testimonial-card">
+            <img src="images/avatar-3.svg" alt="Customer portrait" />
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>“Their attention to detail and market knowledge helped us secure a property with confidence.”</p>
+            <h3>Amelia Torres</h3>
+            <span>Architect</span>
+          </article>
+        </div>
+        <div class="slider-dots" aria-label="Testimonial navigation">
+          <button class="dot active" data-index="0" aria-label="Show testimonial 1"></button>
+          <button class="dot" data-index="1" aria-label="Show testimonial 2"></button>
+          <button class="dot" data-index="2" aria-label="Show testimonial 3"></button>
+        </div>
+      </section>
+
+      <!-- Blog -->
+      <section class="blog section container reveal">
+        <div class="section-heading">
+          <p class="section-label">Latest Blog</p>
+          <h2>Insights for modern buyers and sellers</h2>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <img src="images/blog-1.svg" alt="Luxury home interior" />
+            <div class="blog-body">
+              <h3>How to choose a neighborhood that fits your lifestyle</h3>
+              <p>Explore the factors that matter most when selecting your next address.</p>
+              <a href="#contact">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="images/blog-2.svg" alt="Real estate investment concept" />
+            <div class="blog-body">
+              <h3>Why luxury homes are still a strong long-term investment</h3>
+              <p>Learn how premium properties retain value in changing markets.</p>
+              <a href="#contact">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="images/blog-3.svg" alt="Recent property market trend" />
+            <div class="blog-body">
+              <h3>The best design upgrades that boost resale value</h3>
+              <p>Small improvements can create a powerful first impression and higher returns.</p>
+              <a href="#contact">Read More</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq section container reveal">
+        <div class="section-heading">
+          <p class="section-label">FAQ</p>
+          <h2>Common questions about working with EstateFlow</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>How quickly can I schedule a property tour?</summary>
+            <p>Most tours are arranged within 24 hours after your inquiry is received.</p>
+          </details>
+          <details>
+            <summary>Do you assist with financing and mortgage guidance?</summary>
+            <p>Yes, we connect clients with trusted advisors and helpful resources for financing.</p>
+          </details>
+          <details>
+            <summary>Can I list my home with EstateFlow?</summary>
+            <p>Absolutely. We provide tailored marketing, pricing strategies, and full support.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact section container reveal" id="contact">
+        <div class="contact-info">
+          <p class="section-label">Contact</p>
+          <h2>Let’s turn your real estate goals into reality</h2>
+          <p>Visit our office or reach out through the form below for a private consultation.</p>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i> 350 Park Avenue, New York</li>
+            <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0148</li>
+            <li><i class="fa-solid fa-envelope"></i> hello@estateflow.com</li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="field-group">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <input type="text" placeholder="Subject" />
+          <textarea rows="5" placeholder="How can we help you?"></textarea>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="newsletter section container reveal">
+        <div class="newsletter-card">
+          <div>
+            <p class="section-label">Newsletter</p>
+            <h2>Get weekly market insights and new listings</h2>
+          </div>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" />
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="logo footer-logo" href="#home">
+            <span class="logo-mark">E</span>
+            <span>EstateFlow</span>
+          </a>
+          <p>Premium real estate experiences for buyers, sellers, and investors.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><i class="fa-solid fa-phone"></i> +1 (800) 555-0148</li>
+            <li><i class="fa-solid fa-envelope"></i> hello@estateflow.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> New York, United States</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 EstateFlow. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
